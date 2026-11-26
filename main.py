@@ -362,8 +362,12 @@ write_mid("CONSTITUTION AT 76", 758, 892, 2, BLACK)
 
 # Colophon with sources.
 rule_h(30, 962, 964, BLACK, 1)
-write_line("Sources: Reuters via Northland News Radio and Daily Fox News,", 30, 970, 2, BLACK)
-write_line("InvestingLive, PIB. Events of Thursday 26 November 2026.", 30, 988, 2, BLACK)
+colophon_lines = (
+    "Sources: Reuters via Northland News Radio and Daily Fox News,",
+    "InvestingLive, PIB. Events of Thursday 26 November 2026.",
+)
+for row, text in enumerate(colophon_lines):
+    write_mid(text, SIDE // 2, 970 + row * 18, 2, BLACK)
 
 
 def chunk(kind, payload):
